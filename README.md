@@ -1,3 +1,10 @@
+- forked from: https://github.com/sagikimhi/openu-os-20594
+- see also: https://github.com/raj-maurya/xv6-public_modifiedOS
+
+## maman01
+
+changes i made:
+
 https://github.com/adielbm/20594/blob/d0ea324a13666b381804b69973245ebb3c60ebb2/maman01/xv6-01/usys.S#L12-L35
 
 https://github.com/adielbm/20594/blob/d0ea324a13666b381804b69973245ebb3c60ebb2/maman01/xv6-01/user.h#L26-L27
