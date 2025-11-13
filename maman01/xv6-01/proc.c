@@ -532,3 +532,36 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+//current process status
+void
+cps108()
+{
+  struct proc *p;
+
+  cprintf("name \t pid \t state \t \t ppid \t size \n");
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+
+    if(p->state == UNUSED)
+      continue;
+
+    char *state;
+    switch(p->state) {
+    case RUNNING:
+      state = "RUNNING"; 
+      break;
+    default:
+      state = "SLEEPING";
+      break;
+    }
+
+    // compute parent pid (ppid)
+    int ppid = 0;
+    if(p->parent && p->parent->pid != p->pid)
+      ppid = p->parent->pid;
+    // special rule: INIT's PPID must print as 0
+
+    cprintf("%s \t %d \t %s \t \t %d \t %d \n",
+            p->name, p->pid, state, ppid, p->sz);
+  }
+}  

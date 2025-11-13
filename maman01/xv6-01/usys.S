@@ -19,8 +19,14 @@
     ret
 
 // You need to add your new SYSCALL by the same way(here is a good place)
+#define SYSCALLCPS108(name) \
+  .globl name; \
+  name: \
+    movl $108, %eax; \
+    int $T_SYSCALL; \
+    ret
 
-
+SYSCALLCPS108(cps108)
 SYSCALLFORK(fork) //instead of SYSCALL(fork) !!!
 //SYSCALL(fork)
 SYSCALL(exit)
