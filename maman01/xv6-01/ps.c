@@ -1,9 +1,12 @@
 #include "types.h"
 #include "stat.h"
 #include "user.h"
+#include "fcntl.h"
 
-int main(void)
+int
+main(int argc, char *argv[])
 {
   cps108();
+  
   exit();
 }

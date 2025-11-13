@@ -103,6 +103,7 @@ extern int sys_unlink(void);
 extern int sys_wait(void);
 extern int sys_write(void);
 extern int sys_uptime(void);
+extern int sys_cps108(void);
 
 static int (*syscalls[])(void) = {
 // Adding "new" "SYSCALLfork(fork)" without changing syscall.h
@@ -127,6 +128,7 @@ static int (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
+[108] sys_cps108,
 };
 
 void
@@ -134,12 +136,7 @@ syscall(void)
 {
   int num;
   struct proc *curproc = myproc();
-
-  num = curproc->tf->eax;
-  if (num == 108) {
-    sys_cps108();
-    return;
-  }
+  
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
     curproc->tf->eax = syscalls[num]();
   } else {

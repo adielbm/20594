@@ -534,7 +534,7 @@ procdump(void)
 }
 
 //current process status
-void
+int
 cps108()
 {
   struct proc *p;
@@ -564,4 +564,6 @@ cps108()
     cprintf("%s \t %d \t %s \t \t %d \t %d \n",
             p->name, p->pid, state, ppid, p->sz);
   }
+
+  return 108;
 }  
