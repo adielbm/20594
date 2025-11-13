@@ -121,7 +121,6 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 int            cps108(void);
-int             sys_cps108(void);
 
 // swtch.S
 void            swtch(struct context**, struct context*);
