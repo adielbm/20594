@@ -565,5 +565,5 @@ cps108()
             p->name, p->pid, state, ppid, p->sz);
   }
 
-  return 108;
+  return 22;
 }  

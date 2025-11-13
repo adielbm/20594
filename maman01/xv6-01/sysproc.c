@@ -10,8 +10,7 @@
 int 
 sys_cps108(void)
 {
-  cps108();
-  return 0;
+  return cps108();
 }
 int
 sys_fork(void)
