@@ -40,5 +40,5 @@ USER appuser
 FROM build AS final
 
 WORKDIR /maman01
-COPY ./xv6-01 /maman01
+# COPY ./xv6-01 /maman01
 ENTRYPOINT [ "/bin/bash" ]
