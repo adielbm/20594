@@ -1,6 +1,5 @@
-# changes for `maman02`
 
----
+# changes for maman02
 
 ## File: maman02/xv6-02/Makefile
 
@@ -44,12 +43,6 @@
 ## File: maman02/xv6-02/proc.c
 
 ```diff
-@@ -1,4 +1,4 @@
--#include "types.h"
-+ #include "types.h"
- #include "defs.h"
- #include "param.h"
- #include "memlayout.h"
 @@ -839,3 +839,44 @@ struct cgroup *proc_get_cgroup(void)
       cg = proc->cgroup;
    return cg;
@@ -185,4 +178,3 @@ new mode 100755
  SYSCALL(kmemtest)
 +SYSCALL(cps108)
 ```
-
